@@ -1,0 +1,23 @@
+{
+  "name": "proyecto-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/cli.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vjuniorgm/proyecto-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vjuniorgm/proyecto-test/issues"
+  },
+  "homepage": "https://github.com/vjuniorgm/proyecto-test#readme",
+  "description": "",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
