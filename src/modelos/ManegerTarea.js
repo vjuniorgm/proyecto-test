@@ -17,9 +17,12 @@ class ManagerTarea {
     }
   
     completarTarea(id) {
-    //TO DO EN BASE A UN ID INGRESADO SE DEBE PODER ACTUALIZAR EL ESTADO DE UNA TAREA completadaa true.
-    return this.tareas;
-    // NACHO
+        const tarea = this.tareas.find(t => t.id === id);
+        if (tarea) {
+          tarea.completar();
+          return true;
+        }
+        return false;
     }
   
     eliminarTarea(id) {
