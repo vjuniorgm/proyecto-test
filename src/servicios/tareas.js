@@ -25,7 +25,16 @@ function completarTarea(id) {
 
 function eliminarTarea(id) {
     // En base a un id se debe poder eliminar una tarea de la lista de tareas.
-    return tareas;
+    tareas = tareas.filter(t => t.id!== id);
+    /*
+    const tarea = tareas.find(t => t.id === id);
+    if (tarea) {
+        tareas.splice();
+        return true;
+    }
+
+    return tareas;*/
+    
     //EDUARDO
 }
 function reiniciarTareas() {
