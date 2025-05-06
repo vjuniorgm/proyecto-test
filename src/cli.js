@@ -1,7 +1,11 @@
-const readline = require("readline");
-const TareasManager = require("./TareasManager");
+const readline = require("readline"); 
+const {
+  agregarTarea,
+  listarTareas,
+  completarTarea,
+  eliminarTarea
+} = require("./servicios/tareas");
 
-const tareasManager = new TareasManager();
 
 function mostrarMenu() {
   console.log("\n📋 Gestor de Tareas (Memoria)");
@@ -20,13 +24,13 @@ function mostrarMenu() {
     switch (opcion) {
       case "1":
         rl.question("Descripción: ", (desc) => {
-          tareasManager.agregarTarea(desc);
+          agregarTarea(desc);
           console.log("✅ Tarea agregada.");
           mostrarMenu();
         });
         break;
       case "2":
-        const tareas = tareasManager.listarTareas();
+        const tareas = listarTareas();
         tareas.forEach(t => {
           // Formateamos la salida aquí, en la capa de presentación
           const estado = t.completada ? "✔️" : "❌";
@@ -36,14 +40,14 @@ function mostrarMenu() {
         break;
       case "3":
         rl.question("ID a completar: ", (id) => {
-          const tarea = tareasManager.completarTarea(parseInt(id));
+          const tarea = completarTarea(parseInt(id));
           tarea ? console.log("✔️ Completada.") : console.log("❗ No encontrada.");
           mostrarMenu();
         });
         break;
       case "4":
         rl.question("ID a eliminar: ", (id) => {
-          tareasManager.eliminarTarea(parseInt(id));
+          eliminarTarea(parseInt(id));
           console.log("🗑️ Tarea eliminada.");
           mostrarMenu();
         });
